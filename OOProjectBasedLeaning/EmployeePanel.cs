@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OOProjectBasedLeaning
 {
 
-    public class EmployeePanel : Panel
+    public class EmployeePanel : DragDropPanel
     {
 
         private Employee employee;
@@ -43,6 +44,13 @@ namespace OOProjectBasedLeaning
 
         }
 
+        protected override void OnPanelMouseDown()
+        {
+            DoDragDropMove();
+
+            //model.Name = "Drop at " + DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
+
+        }
     }
 
 }
