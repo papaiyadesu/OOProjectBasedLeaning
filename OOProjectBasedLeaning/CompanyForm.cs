@@ -15,6 +15,7 @@ namespace OOProjectBasedLeaning
     {
 
         private Company company = NullCompany.Instance;
+        int countY = 10;
 
         public CompanyForm()
         {
@@ -43,7 +44,18 @@ namespace OOProjectBasedLeaning
             if (serializableObject is DragDropPanel)
             {
 
-                (serializableObject as DragDropPanel).AddDragDropForm(this, PointToClient(new Point(dragEventArgs.X, dragEventArgs.Y)));
+                //(serializableObject as DragDropPanel).AddDragDropForm(this, PointToClient(new Point(dragEventArgs.X, dragEventArgs.Y)));
+
+                // 左上から順に並べる
+                int fixedX = 10;
+                int fixedY = countY;
+
+                // 位置を取得と次の位置の
+                Point dropPoint = new Point(fixedX, fixedY);
+
+                countY += 50;
+
+                (serializableObject as DragDropPanel).AddDragDropForm(this, dropPoint);
 
             }
 
