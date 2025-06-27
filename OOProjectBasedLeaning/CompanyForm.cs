@@ -20,6 +20,9 @@ namespace OOProjectBasedLeaning
         {
 
             InitializeComponent();
+            //表示位置の指定
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(557, 10);
 
             company = new CompanyModel("MyCompany");
 
