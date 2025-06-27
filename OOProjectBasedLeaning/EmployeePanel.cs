@@ -39,6 +39,10 @@ namespace OOProjectBasedLeaning
                 Width = 160
             };
 
+            //パネルの色と大きさ
+            this.BackColor = Color.LightGreen;
+            this.Size = new Size(100, 30);
+
             Controls.Add(employeeNameLabel);
             Controls.Add(guestNameTextBox);
 
