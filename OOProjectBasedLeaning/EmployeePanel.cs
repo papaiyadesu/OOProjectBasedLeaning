@@ -46,6 +46,12 @@ namespace OOProjectBasedLeaning
             Controls.Add(employeeNameLabel);
             Controls.Add(guestNameTextBox);
 
+            // テキストボックスの変更イベントを登録
+            guestNameTextBox.TextChanged += (sender, e) =>
+            {
+                employeeNameLabel.Text = guestNameTextBox.Text;
+                employee.Name = guestNameTextBox.Text;
+            };
         }
 
         protected override void OnPanelMouseDown()
