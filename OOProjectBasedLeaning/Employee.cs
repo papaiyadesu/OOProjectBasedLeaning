@@ -27,14 +27,18 @@ namespace OOProjectBasedLeaning
 
         bool IsAtWork();
 
+        bool IsAtHome();
+       
+
     }
 
     public class EmployeeModel : ModelEntity, Employee
     {
 
         private int id;
-
         private Company company = NullCompany.Instance;
+        private Home home = NullHome.Instance;
+        private Place place = NullPlace.Instance;
 
         public EmployeeModel() : this(Employee.NEW)
         {
@@ -130,6 +134,13 @@ namespace OOProjectBasedLeaning
 
         }
 
+        public bool IsAtHome()
+        {
+
+            return place is Home;
+
+        }
+
     }
 
     public class Manager : EmployeeModel
@@ -214,6 +225,14 @@ namespace OOProjectBasedLeaning
         }
 
         public bool IsAtWork()
+        {
+
+            return false;
+
+        }
+
+
+        public bool IsAtHome()
         {
 
             return false;
