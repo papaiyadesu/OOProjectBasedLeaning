@@ -8,6 +8,9 @@ namespace OOProjectBasedLeaning
         {
 
             InitializeComponent();
+            //•\Ž¦ˆÊ’u‚ÌŽw’è
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(557, 499);
 
         }
 

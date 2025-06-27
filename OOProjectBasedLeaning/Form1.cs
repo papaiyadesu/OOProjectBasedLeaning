@@ -18,6 +18,9 @@ namespace OOProjectBasedLeaning
             // ‰ïŽÐ
             new CompanyForm().Show();
 
+            //Form1‚ð‰B‚·
+            this.WindowState = FormWindowState.Minimized;
+
         }
 
     }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,10 @@ namespace OOProjectBasedLeaning
         {
 
             InitializeComponent();
+
+            //表示位置の指定
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(10, 10);
 
         }
         protected override void OnFormDragEnterSerializable(DragEventArgs dragEventArgs)
