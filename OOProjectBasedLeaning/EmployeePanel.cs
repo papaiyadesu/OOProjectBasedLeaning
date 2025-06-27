@@ -24,21 +24,30 @@ namespace OOProjectBasedLeaning
 
         private void InitializeComponent()
         {
+            // 従業員の状態ラベルを作成
+            EmployeeStatusLabel employeeStatusLabel = new EmployeeStatusLabel(employee)
+            {
+
+                Location = new Point(20, 10),
+
+            };
 
             Label employeeNameLabel = new Label
             {
                 Text = employee.Name,
                 AutoSize = true,
-                Location = new Point(20, 10)
+                Location = new Point(20, 30)
             };
 
             TextBox guestNameTextBox = new TextBox
             {
                 Text = employee.Name,
-                Location = new Point(140, 6),
+                Location = new Point(140, 26),
+
                 Width = 160
             };
 
+            Controls.Add(employeeStatusLabel);
             Controls.Add(employeeNameLabel);
             Controls.Add(guestNameTextBox);
 
