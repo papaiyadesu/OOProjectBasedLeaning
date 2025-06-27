@@ -42,18 +42,19 @@ namespace OOProjectBasedLeaning
             TextBox guestNameTextBox = new TextBox
             {
                 Text = employee.Name,
-                Location = new Point(140, 26),
+                Location = new Point(130, 26),
 
                 Width = 160
             };
 
             //パネルの色と大きさ
             this.BackColor = Color.LightGreen;
-            this.Size = new Size(100, 30);
+            this.Size = new Size(100, 50);
 
             Controls.Add(employeeStatusLabel);
             Controls.Add(employeeNameLabel);
             Controls.Add(guestNameTextBox);
+            
 
         }
 
