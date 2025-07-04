@@ -28,11 +28,15 @@ namespace OOProjectBasedLeaning
         bool IsAtWork();
 
         bool IsAtHome();
-       
+
+        Employee Go2Company();
+
+        Employee Go2Home();
+
 
     }
 
-    public class EmployeeModel : ModelEntity, Employee
+    public class EmployeeModel : NotifierModelEntity, Employee
     {
 
         private int id;
@@ -101,6 +105,28 @@ namespace OOProjectBasedLeaning
             company.RemoveEmployee(this);
 
             company = NullCompany.Instance;
+
+            return this;
+
+        }
+
+        public Employee Go2Company()
+        {
+
+            place = company;
+
+            Notify();
+
+            return this;
+
+        }
+
+        public Employee Go2Home()
+        {
+
+            place = home;
+
+            Notify();
 
             return this;
 
@@ -239,6 +265,19 @@ namespace OOProjectBasedLeaning
 
         }
 
+        public Employee Go2Company()
+        {
+
+            return this;
+
+        }
+
+        public Employee Go2Home()
+        {
+
+            return this;
+
+        }
     }
 
 }

@@ -39,7 +39,7 @@ namespace OOProjectBasedLeaning
                 Location = new Point(20, 30)
             };
 
-            TextBox guestNameTextBox = new TextBox
+            TextBox employeeNameTextBox = new TextBox
             {
                 Text = employee.Name,
                 Location = new Point(130, 26),
@@ -53,29 +53,105 @@ namespace OOProjectBasedLeaning
 
             Controls.Add(employeeStatusLabel);
             Controls.Add(employeeNameLabel);
-            Controls.Add(guestNameTextBox);
-            
+            Controls.Add(employeeNameTextBox);
+
 
             // テキストボックスの変更イベントを登録
-            guestNameTextBox.TextChanged += (sender, e) =>
+            employeeNameTextBox.TextChanged += (sender, e) =>
             {
-                employee.Name = guestNameTextBox.Text;
+                employee.Name = employeeNameTextBox.Text;
                 employeeNameLabel.Text = employee.Name;
             };
-                }
+        }
 
         protected override void OnPanelMouseDown()
         {
             DoDragDropMove();
 
-            if (GetForm() is HomeForm)
+            if (GetForm() is not EmployeeCreatorForm)
             {
-                employee.Name = "帰宅";
+
+                // 従業員名のテキストボックスを編集不可にして非表示にする
+                //employeeNameTextBox.ReadOnly = true;
+                //employeeNameTextBox.Hide();
+
+                try
+                {
+
+                    if (GetForm() is CompanyForm)
+                    {
+
+                        // 会社フォームにドロップされた場合、「出勤」する
+                        employee.Go2Company().ClockIn();
+
+                    }
+                    else if (GetForm() is HomeForm)
+                    {
+
+                        // ホームフォームにドロップされた場合、「退勤」する
+                        employee.ClockOut();
+
+                        // 従業員が帰宅する
+                        employee.Go2Home();
+
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show($"{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
             }
             else
             {
-                employee.Name = "Drop at " + DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
+
+                // 従業員名のテキストボックスを編集可能にして表示する
+                //employeeNameTextBox.ReadOnly = false;
+                //employeeNameTextBox.Show();
+
             }
+
+
+
+            //if (GetForm() is HomeForm)
+            //{
+            //    employee.Name = "帰宅";
+            //}
+            //else
+            //{
+            //    employee.Name = "Drop at " + DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
+            //}
         }
+
+        public void AddCompany(Company company)
+        {
+
+            employee.AddCompany(company);
+
+        }
+
+        public void RemoveCompany()
+        {
+
+            employee.RemoveCompany();
+
+        }
+
+        //public void AddHome(Home home)
+        //{
+
+        //    employee.AddHome(home);
+
+        //}
+
+        //public void RemoveHome()
+        //{
+
+        //    employee.RemoveHome();
+
+        //}
     }
 }
