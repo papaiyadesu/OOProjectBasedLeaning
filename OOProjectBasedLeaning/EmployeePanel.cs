@@ -59,10 +59,10 @@ namespace OOProjectBasedLeaning
             // テキストボックスの変更イベントを登録
             guestNameTextBox.TextChanged += (sender, e) =>
             {
-                employeeNameLabel.Text = guestNameTextBox.Text;
                 employee.Name = guestNameTextBox.Text;
+                employeeNameLabel.Text = employee.Name;
             };
-        }
+                }
 
         protected override void OnPanelMouseDown()
         {
@@ -76,9 +76,6 @@ namespace OOProjectBasedLeaning
             {
                 employee.Name = "Drop at " + DateTime.Now.ToString("[yyyy-MM-dd HH:mm:ss]");
             }
-           
-
         }
     }
-
 }

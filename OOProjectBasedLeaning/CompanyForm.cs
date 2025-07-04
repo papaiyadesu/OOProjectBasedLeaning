@@ -50,7 +50,7 @@ namespace OOProjectBasedLeaning
                 int fixedX = 10;
                 int fixedY = countY;
 
-                // 位置を取得と次の位置の
+                // 位置を取得と次の位置の指定
                 Point dropPoint = new Point(fixedX, fixedY);
 
                 countY += 50;
