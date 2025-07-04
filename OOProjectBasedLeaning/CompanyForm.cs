@@ -44,18 +44,18 @@ namespace OOProjectBasedLeaning
             if (serializableObject is DragDropPanel)
             {
 
-                //(serializableObject as DragDropPanel).AddDragDropForm(this, PointToClient(new Point(dragEventArgs.X, dragEventArgs.Y)));
+                (serializableObject as DragDropPanel).AddDragDropForm(this, PointToClient(new Point(dragEventArgs.X, dragEventArgs.Y)));
 
-                // 左上から順に並べる
-                int fixedX = 10;
-                int fixedY = countY;
+                //// 左上から順に並べる
+                //int fixedX = 10;
+                //int fixedY = countY;
 
-                // 位置を取得と次の位置の指定
-                Point dropPoint = new Point(fixedX, fixedY);
+                //// 位置を取得と次の位置の指定
+                //Point dropPoint = new Point(fixedX, fixedY);
 
-                countY += 50;
+                //countY += 50;
 
-                (serializableObject as DragDropPanel).AddDragDropForm(this, dropPoint);
+                //(serializableObject as DragDropPanel).AddDragDropForm(this, dropPoint);
 
             }
 
