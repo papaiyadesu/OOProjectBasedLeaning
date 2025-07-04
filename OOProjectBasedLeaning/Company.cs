@@ -8,7 +8,7 @@ using System.Xml.Linq;
 namespace OOProjectBasedLeaning
 {
 
-    public interface Company : Model
+    public interface Company : Model, Place
     {
 
         /// <summary>
