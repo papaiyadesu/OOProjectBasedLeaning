@@ -58,7 +58,7 @@ namespace OOProjectBasedLeaning
             {
 
                 Text = "帰宅中";
-                ForeColor = Color.Green;
+                ForeColor = Color.Blue;
 
             }
             else
