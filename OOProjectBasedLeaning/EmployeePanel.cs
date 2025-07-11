@@ -12,6 +12,7 @@ namespace OOProjectBasedLeaning
     {
 
         private Employee employee;
+        private EmployeeNameTextBox employeeNameTextBox = NullEmployeeNameTextBox.Instance;
 
         public EmployeePanel(Employee employee)
         {
@@ -39,13 +40,21 @@ namespace OOProjectBasedLeaning
                 Location = new Point(20, 30)
             };
 
-            TextBox employeeNameTextBox = new TextBox
+            //TextBox employeeNameTextBox = new TextBox
+            //{
+            //    Text = employee.Name,
+            //    Location = new Point(130, 26),
+
+            //    Width = 160
+            //};
+
+            employeeNameTextBox = new EmployeeNameTextBox(employee)
             {
                 Text = employee.Name,
                 Location = new Point(130, 26),
-
                 Width = 160
             };
+            Controls.Add(employeeNameTextBox);
 
             //パネルの色と大きさ
             this.BackColor = Color.LightGreen;
@@ -72,8 +81,8 @@ namespace OOProjectBasedLeaning
             {
 
                 // 従業員名のテキストボックスを編集不可にして非表示にする
-                //employeeNameTextBox.ReadOnly = true;
-                //employeeNameTextBox.Hide();
+                employeeNameTextBox.ReadOnly = true;
+                employeeNameTextBox.Hide();
 
                 try
                 {
