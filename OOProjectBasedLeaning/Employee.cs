@@ -156,7 +156,7 @@ namespace OOProjectBasedLeaning
         public bool IsAtWork()
         {
 
-            return company.IsAtWork(this);
+            return place is Company;//return company.IsAtWork(this);
 
         }
 
