@@ -141,7 +141,7 @@ namespace OOProjectBasedLeaning
 
         public void ClockIn()
         {
-
+            
             company.ClockIn(this);
 
         }
@@ -156,7 +156,7 @@ namespace OOProjectBasedLeaning
         public bool IsAtWork()
         {
 
-            return place is Company;//return company.IsAtWork(this);
+            return company.IsAtWork(this);
 
         }
 

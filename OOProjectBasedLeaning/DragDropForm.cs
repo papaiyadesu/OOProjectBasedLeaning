@@ -114,7 +114,7 @@ namespace OOProjectBasedLeaning
 
         private NullDragDropForm()
         {
-        
+
         }
 
         public static DragDropForm Instance
@@ -123,7 +123,6 @@ namespace OOProjectBasedLeaning
             get { return instance; }
 
         }
-
     }
-
 }
+

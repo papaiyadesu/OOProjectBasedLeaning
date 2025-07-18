@@ -45,6 +45,7 @@ namespace OOProjectBasedLeaning
             UpdateDisplay();
 
         }
+
         protected override void OnFormDragEnterSerializable(DragEventArgs dragEventArgs)
         {
 
