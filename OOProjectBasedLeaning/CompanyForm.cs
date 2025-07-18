@@ -16,6 +16,7 @@ namespace OOProjectBasedLeaning
 
         private Company company = NullCompany.Instance;
         int countY = 10;
+        private Label employeeNamesLabel;
 
         public CompanyForm()
         {
@@ -29,6 +30,18 @@ namespace OOProjectBasedLeaning
 
             // TODO: タイムレコーダーのパネルを設置する
             new TimeTrackerModel(company);
+
+            employeeNamesLabel = new Label
+            {
+
+                Location = new Point(20, 20),
+                AutoSize = true,
+                Font = new Font("Arial", 10, FontStyle.Regular),
+
+            };
+            Controls.Add(employeeNamesLabel);
+
+            UpdateDisplay();
 
         }
         protected override void OnFormDragEnterSerializable(DragEventArgs dragEventArgs)
@@ -58,6 +71,22 @@ namespace OOProjectBasedLeaning
                 //(serializableObject as DragDropPanel).AddDragDropForm(this, dropPoint);
 
             }
+
+        }
+
+        private void UpdateDisplay()
+        {
+
+            StringBuilder employeeNames = new StringBuilder();
+            company.Employees().ForEach(employee =>
+            {
+
+                employeeNames.Append(employee.Name);
+                employeeNames.Append("\n");
+
+            });
+
+            employeeNamesLabel.Text = employeeNames.ToString();
 
         }
 

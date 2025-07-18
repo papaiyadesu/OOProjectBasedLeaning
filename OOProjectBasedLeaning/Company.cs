@@ -25,6 +25,8 @@ namespace OOProjectBasedLeaning
         /// <returns>従業員</returns>
         Employee FindEmployeeById(int id);
 
+        List<Employee> Employees();
+
         /// <summary>
         /// Adds a new employee to the company.
         /// </summary>
@@ -112,6 +114,12 @@ namespace OOProjectBasedLeaning
             return employees.GetValueOrDefault(id, NullEmployee.Instance);
 
         }
+        public List<Employee> Employees()
+        {
+
+            return employees.Values.ToList();
+
+        }
 
         public Company AddEmployee(Employee employee)
         {
@@ -181,6 +189,7 @@ namespace OOProjectBasedLeaning
     {
 
         private static Company instance = new NullCompany();
+        private static List<Employee> list = new List<Employee>(0);
 
         private NullCompany()
         {
@@ -209,6 +218,13 @@ namespace OOProjectBasedLeaning
         {
 
             return NullEmployee.Instance;
+
+        }
+
+        public List<Employee> Employees()
+        {
+
+            return list;
 
         }
 
