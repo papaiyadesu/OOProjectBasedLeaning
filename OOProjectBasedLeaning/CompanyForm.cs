@@ -31,6 +31,7 @@ namespace OOProjectBasedLeaning
             // TODO: タイムレコーダーのパネルを設置する
             new TimeTrackerModel(company);
 
+            //従業員一覧ラベル追加
             employeeNamesLabel = new Label
             {
 
